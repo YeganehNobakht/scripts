@@ -9,12 +9,20 @@ def json_parser(file_name):
 def yaml_parser(file_name):
     with open(file_name, "r") as file:
         file_content = safe_load(file)
-    return dump(file_content);
+    return file_content;
 
+
+def print_yml_file(file_name):
+    yml_content = yaml_parser(file_name)
+    print
+    for key , value in yml_content.items():
+        print(f"key is: {key}")
+        print(f"value is: {value}")
 
 def main():
     # print(json_parser("info.json"))
-    print(yaml_parser("info.yml"))
+    print_yml_file("info.yml")
+
 
 
 
