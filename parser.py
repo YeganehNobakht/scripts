@@ -28,10 +28,19 @@ def convert_yml_to_json(yml_file_name, json_file_name):
     yml_content = yaml_parser(yml_file_name)
     write_json_to_file(yml_content, json_file_name)
 
+def write_yml_to_file(content, dest_file):
+    with open(dest_file, "w") as file:
+        yaml.dump(content, file, indent=4)
+
+def convert_json_to_yml(json_file_name, dest_yml_file):
+    yml_content = json_parser(json_file_name)
+    write_yml_to_file(yml_content, dest_yml_file)
+
 def main():
     # print(json_parser("info.json"))
     # print_yml_file("info.yml")
-    convert_yml_to_json("info.yml", "yml_to_json.json")
+    # convert_yml_to_json("info.yml", "yml_to_json.json")
+    convert_json_to_yml("info.json", "json_to_yml.yml")
 
 
 
