@@ -46,11 +46,16 @@ def toggle_file_type(file_name, converted_file):
 
 
 def main():
-    # print(json_parser("info.json"))
-    # print_yml_file("info.yml")
-    # convert_yml_to_json("info.yml", "yml_to_json.json")
-    # convert_json_to_yml("info.json", "json_to_yml.yml")
-    toggle_file_type("info.json", "toggle.yml")
+    try:
+        # print(json_parser("info.json"))
+        # print_yml_file("info.yml")
+        # convert_yml_to_json("info.yml", "yml_to_json.json")
+        # convert_json_to_yml("info.json", "json_to_yml.yml")
+        toggle_file_type("info.json", "toggle.yml")
+    except FileNotFoundError:
+        print("file not found")
+    except Exception as e:
+        print("An error eccured.")
 
 
 
