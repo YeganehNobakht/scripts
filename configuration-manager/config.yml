@@ -1,0 +1,13 @@
+app_name: MyCoolApp
+version: 1.0
+debug: true
+max_users: 100
+features:
+  - login
+  - dashboard
+  - analytics
+database:
+  host: localhost
+  port: 5432
+  username: admin
+  password: secret
